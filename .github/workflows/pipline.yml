@@ -14,11 +14,11 @@ jobs:
     run: /
         docker-compose --build up -d 
         if [ $? -eq 0 ]; then 
-            echo "Image Built Successfully" 
+           echo "Image Built Successfully" 
         else 
             echo "image build failed check the logs for more details"
             exit 1 
-            
+        fi 
   
 
   - name: Run tests
@@ -29,6 +29,7 @@ jobs:
           else 
             echo " tests failed check the logs for more details"
             exit 1
+        fi
             
 
   - name: Push to Docker hub 
@@ -40,6 +41,7 @@ jobs:
             else 
             echo " image tagging failed check the logs for more details"
             exit 1 
+        fi
 
   - name : Push to Docker Hub 
     run: / 
@@ -49,3 +51,4 @@ jobs:
             else 
             echo " Image push failed check the logs for more details"
             exit 1 
+        fi
