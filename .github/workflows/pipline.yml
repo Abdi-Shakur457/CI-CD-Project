@@ -16,7 +16,7 @@ jobs:
 
   - name: build image 
     run: |
-        docker-compose --build up -d 
+        docker compose build && docker compose up -d 
         if [ $? -eq 0 ]; then 
            echo "Image Built Successfully" 
         else 
@@ -27,7 +27,7 @@ jobs:
 
   - name: Run tests
     run: |
-       docker-compose exec web pytest tests/ 
+       docker compose exec web pytest tests/ 
         if [ $? -eq 0 ]; then 
           echo " tests ran successfully" 
           else 
