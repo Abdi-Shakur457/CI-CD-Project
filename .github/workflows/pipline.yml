@@ -1,0 +1,51 @@
+name: CoderCo CICD Workflow
+
+on: [push]
+
+jobs:
+ build:
+  runs-on: ubuntu-latest
+  steps:
+  - name: checkout code
+    uses: actions/checkout@v2
+
+
+  - name: build image 
+    run: /
+        docker-compose --build up -d 
+        if [ $? -eq 0 ]; then 
+            echo "Image Built Successfully" 
+        else 
+            echo "image build failed check the logs for more details"
+            exit 1 
+            
+  
+
+  - name: Run tests
+    run: /
+       docker-compose exec web pytest tests/ 
+        if [ $? -eq 0 ]; then 
+          echo " tests ran successfully" 
+          else 
+            echo " tests failed check the logs for more details"
+            exit 1
+            
+
+  - name: Push to Docker hub 
+    run: /
+      docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+      docker tag coderco-container-challenge-app:latest ${{ secrets.DOCKER_USERNAME }}/coderco-container-challenge-app:latest
+       if [ $? -eq 0 ]; then 
+            echo " image tagged successfully"
+            else 
+            echo " image tagging failed check the logs for more details"
+            exit 1 
+
+  - name : Push to Docker Hub 
+    run: / 
+        docker push ${{ secrets.DOCKER_USERNAME }}/coderco-container-challenge-app:latest
+        if [ $? -eq 0 ]; then 
+            echo " Image pushed successfully to Docker Hub "
+            else 
+            echo " Image push failed check the logs for more details"
+            exit 1 

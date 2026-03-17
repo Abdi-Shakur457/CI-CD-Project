@@ -1,15 +1,26 @@
-FROM python:3.12-slim 
+# Stage 1 — Build & test
+FROM python:3.11-slim AS builder
 
-WORKDIR /app 
+WORKDIR /app
 
-COPY requirements.txt . 
+# Install app + dev dependencies
+COPY requirements.txt dev-requirements.txt ./
+RUN pip install --no-cache-dir -r requirements.txt -r dev-requirements.txt
 
-RUN pip3 install --no-cache-dir -r requirements.txt 
+# Copy app code
+COPY . .
 
-EXPOSE 5003 
+# Stage 2 — Production
+FROM python:3.11-slim AS prod
 
-COPY . . 
+WORKDIR /app
 
+# Only copy app code and prod dependencies
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+COPY --from=builder /app .
 
-CMD ["python3" , "my_app.py"] 
+# Default command
+CMD ["python", "my_app.py"]
+
 
