@@ -37,7 +37,7 @@ jobs:
 
   - name: Run tests
     run: |
-       docker compose run --rm app pytest tests/
+        docker compose exec app pytest tests/ 
         if [ $? -eq 0 ]; then 
           echo " tests ran successfully" 
           else 
