@@ -11,7 +11,7 @@ jobs:
 
 
   - name: build image 
-    run: /
+    run: |
         docker-compose --build up -d 
         if [ $? -eq 0 ]; then 
            echo "Image Built Successfully" 
@@ -22,7 +22,7 @@ jobs:
   
 
   - name: Run tests
-    run: /
+    run: |
        docker-compose exec web pytest tests/ 
         if [ $? -eq 0 ]; then 
           echo " tests ran successfully" 
@@ -33,7 +33,7 @@ jobs:
             
 
   - name: Push to Docker hub 
-    run: /
+    run: |
       docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
       docker tag coderco-container-challenge-app:latest ${{ secrets.DOCKER_USERNAME }}/coderco-container-challenge-app:latest
        if [ $? -eq 0 ]; then 
@@ -44,7 +44,7 @@ jobs:
         fi
 
   - name : Push to Docker Hub 
-    run: / 
+    run: | 
         docker push ${{ secrets.DOCKER_USERNAME }}/coderco-container-challenge-app:latest
         if [ $? -eq 0 ]; then 
             echo " Image pushed successfully to Docker Hub "
