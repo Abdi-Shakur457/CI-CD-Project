@@ -1,3 +1,5 @@
-def test_app_runs():
-    import app
-    assert app is not None
+# tests/test_app.py
+
+def test_app_import():
+    import my_app
+    assert my_app is not None
