@@ -1,7 +1,7 @@
 # Stage 1 — Build & test
 FROM python:3.11-slim AS builder
 
-WORKDIR /app
+WORKDIR /CI-CD-PROJECT
 
 # Install app + dev dependencies
 COPY requirements.txt dev-requirements.txt ./
