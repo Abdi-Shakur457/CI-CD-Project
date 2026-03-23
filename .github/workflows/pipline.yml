@@ -59,7 +59,7 @@ jobs:
 
   - name : Push to Docker Hub 
     run: | 
-        docker push ${{ secrets.DOCKER_USERNAME }}/coderco-container-challenge-app:latest
+        docker push ${{ secrets.DOCKER_USERNAME }}/ci-cd-project-app:latest 
         if [ $? -eq 0 ]; then 
             echo " Image pushed successfully to Docker Hub "
             else 
