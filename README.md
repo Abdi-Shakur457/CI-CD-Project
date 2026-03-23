@@ -1,19 +1,6 @@
 # CI/CD Project
 
 
-## Screenshots 
-
-<img width="959" height="475" alt="cicd ss" src="https://github.com/user-attachments/assets/0b1a2a3c-ccec-4cb3-b582-263aad570d78" />
-
-
-
-<img width="577" height="101" alt="tests" src="https://github.com/user-attachments/assets/d3b66641-7cfc-4734-bd45-fcde46bb27a0" />
-
-
-
-<img width="947" height="356" alt="docker-hub" src="https://github.com/user-attachments/assets/f4509562-c29f-4b1e-8b99-594cc50fbae1" />
-
-
 ## Overview  
 This project demonstrates a simple CI/CD pipeline using Docker and GitHub Actions. The application is containerised and automatically built, tested, and pushed to Docker Hub whenever changes are pushed to the repository.
 
@@ -55,6 +42,19 @@ This allows the latest version of the application to be stored and reused for de
 - Pytest  
 
 ---
+
+## Screenshots 
+
+<img width="959" height="475" alt="cicd ss" src="https://github.com/user-attachments/assets/0b1a2a3c-ccec-4cb3-b582-263aad570d78" />
+
+
+
+<img width="577" height="101" alt="tests" src="https://github.com/user-attachments/assets/d3b66641-7cfc-4734-bd45-fcde46bb27a0" />
+
+
+
+<img width="947" height="356" alt="docker-hub" src="https://github.com/user-attachments/assets/f4509562-c29f-4b1e-8b99-594cc50fbae1" />
+
 
 ## How to Run Locally  
 
