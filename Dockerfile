@@ -13,7 +13,7 @@ COPY . .
 # Stage 2 — Production
 FROM python:3.11-slim AS prod
 
-WORKDIR /CI -CD-PROJECT
+WORKDIR /CI-CD-PROJECT
 
 # Only copy app code and prod dependencies
 COPY requirements.txt .
