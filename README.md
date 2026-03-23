@@ -52,6 +52,7 @@ This allows the latest version of the application to be stored and reused for de
 docker compose up --build
 
 
+## Screenshots 
 
 <img width="959" height="475" alt="cicd ss" src="https://github.com/user-attachments/assets/0b1a2a3c-ccec-4cb3-b582-263aad570d78" />
 
