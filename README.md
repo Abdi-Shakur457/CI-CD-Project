@@ -51,6 +51,7 @@ This allows the latest version of the application to be stored and reused for de
 ```bash
 docker compose up --build
 
+---
 
 ## Screenshots 
 
