@@ -50,3 +50,15 @@ This allows the latest version of the application to be stored and reused for de
 
 ```bash
 docker compose up --build
+
+
+
+<img width="959" height="475" alt="cicd ss" src="https://github.com/user-attachments/assets/0b1a2a3c-ccec-4cb3-b582-263aad570d78" />
+
+
+
+<img width="577" height="101" alt="tests" src="https://github.com/user-attachments/assets/d3b66641-7cfc-4734-bd45-fcde46bb27a0" />
+
+
+
+<img width="947" height="356" alt="docker-hub" src="https://github.com/user-attachments/assets/f4509562-c29f-4b1e-8b99-594cc50fbae1" />
